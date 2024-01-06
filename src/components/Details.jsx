@@ -29,7 +29,7 @@ function Details({ exerciseDetail }) {
         alignItems: "center",
       }}>
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-      <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
+      <Stack key={name} sx={{ gap: { lg: "35px", xs: "20px" } }}>
         <Typography
           fontFamily="Alegreya"
           textTransform="capitalize"
@@ -42,9 +42,10 @@ function Details({ exerciseDetail }) {
           is one of the best exercises to target your {target}. It will help you
           improve your mood and gain energy.
         </Typography>
-        {extraDetail.map((item) => (
+        {extraDetail?.map((item) => (
           <Stack key={item.name} direction="row" gap="24px" alignItems="center">
             <Button
+              key={item.name}
               sx={{
                 background: "#fff2db",
                 borderRadius: "50%",

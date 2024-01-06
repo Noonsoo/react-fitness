@@ -3,8 +3,6 @@ import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/gym.png";
 
 function BodyPart({ item, bodyPart, setBodyPart }) {
-  console.log(bodyPart);
-  console.log(item);
   return (
     <Stack
       onClick={() => setBodyPart(item)}
